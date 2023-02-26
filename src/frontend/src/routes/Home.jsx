@@ -14,7 +14,7 @@ const initialNodes = [
     {
         id: "1",
         type: "input",
-        data: { inputs: 8, outputs: 8, name: "CAA1 GPIO" },
+        data: { inputs: 8, outputs: 8, name: "Central GPIO" },
         type: "gpioNode",
         position: { x: 100, y: 0 },
     },

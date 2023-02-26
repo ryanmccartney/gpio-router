@@ -2,6 +2,8 @@
 
 Web-based tool for routing GPIO over IP
 
+![Screenshot](https://github.com/ryanmccartney/gpio-router/blob/main/docs/screenshot.png?raw=true)
+
 ## Conatiners
 
 -   Frontend, contains react app in dev and serves static files in prod
