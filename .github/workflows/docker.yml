@@ -22,7 +22,7 @@ jobs:
                 images: [backend, frontend]
         defaults:
             run:
-                working-directory: ./src/${{matrix.images}}
+                working-directory: ./src
         steps:
             #Get the latest version of the repository
             - name: Checkout
@@ -38,7 +38,7 @@ jobs:
               name: Get Version Number
               id: version
               with:
-                  path: ./src/${{matrix.images}}
+                  path: ./${{matrix.images}}
             - name: Print Current Version
               run: echo Building with version ${{ steps.version.outputs.current-version }}
             #Docker Buildx Setup
@@ -63,7 +63,7 @@ jobs:
             - name: Build and push to registry
               uses: docker/build-push-action@v3
               with:
-                  context: "."
+                  context: "./${{matrix.images}}"
                   platforms: "linux/amd64"
                   push: ${{ github.event_name != 'pull_request' }}
                   tags: |
