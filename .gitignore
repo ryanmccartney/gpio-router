@@ -1,0 +1,9 @@
+# Frontend
+/src/frontend/node_modules
+
+# Backend
+/src/backend/node_modules
+/src/backend/logs
+
+# General
+.DS_Store

@@ -1,0 +1,41 @@
+# NAME: docker-compose.yml
+# AUTH: Ryan McCartney <ryan@mccartney.info>
+# DATE: 24/02/2023
+# DESC: Defines Docker services for GPIO Router
+
+version: "3.3"
+
+networks:
+    gpioRouter:
+        driver: bridge
+
+services:
+    backend:
+        build: "./src/backend"
+        restart: always
+        volumes:
+            - ./src/backend:/home/node/app
+        environment:
+            BACKEND_PORT: 3100
+            NODE_ENV: development
+            LOG_LEVEL: debug
+            DEBUG: engine,socket.io*
+        networks:
+            - gpioRouter
+        ports:
+            - 3100:3100
+    frontend:
+        build: "./src/frontend"
+        restart: always
+        volumes:
+            - ./src/frontend:/home/node/app
+        environment:
+            PORT: 3000
+            NODE_ENV: development
+            BACKEND_PORT: 3100
+        depends_on:
+            - backend
+        networks:
+            - gpioRouter
+        ports:
+            - 3000:3000
