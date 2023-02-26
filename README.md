@@ -1,5 +1,7 @@
 # GPIO Router
 
+[![Docker Deploy](https://github.com/ryanmccartney/gpio-router/actions/workflows/docker.yml/badge.svg?branch=main)](https://github.com/ryanmccartney/gpio-router/actions/workflows/docker.yml)
+
 Web-based tool for routing GPIO over IP
 
 ![Screenshot](https://github.com/ryanmccartney/gpio-router/blob/main/docs/screenshot.png?raw=true)
