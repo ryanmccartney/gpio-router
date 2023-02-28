@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Toolbar, SvgIcon, AppBar, Typography, CssBaseline, useScrollTrigger, Box, Container } from "@mui/material";
+import { Toolbar, SvgIcon, AppBar, Typography, CssBaseline, useScrollTrigger, Box } from "@mui/material";
 
 const ElevationScroll = (props) => {
     const { children, window } = props;
@@ -33,9 +33,9 @@ export default function ElevateAppBar(props) {
                 </AppBar>
             </ElevationScroll>
             <Toolbar />
-            <Container>
+            <Box>
                 <Box sx={{ height: "90vh" }}>{props.children}</Box>
-            </Container>
+            </Box>
         </React.Fragment>
     );
 }
